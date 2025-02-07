@@ -23,10 +23,7 @@ class ClanCategory(str, Enum):
         return self.value
 
 
-class ClanModelResponse(BaseModel):
-    name: str
-    creator: str
-    in_clan_rank: str
-    total_coin: int
-    created_at: datetime
-    status: ClanStatus
+class CreateClan(BaseModel):
+    clan_name: str
+    clan_image: str
+    clan_members: dict[str, dict[str, str]]
